@@ -198,28 +198,6 @@ describe ISO3166::Country do
 
       it { should be_false }
     end
-
-    context "when loaded via 'countries'" do
-      before { require 'countries' }
-
-      describe "existance" do
-        subject { defined?(Country) }
-
-        it { should be_true }
-      end
-
-      describe "superclass" do
-        subject { Country.superclass }
-
-        it { should == ISO3166::Country }
-      end
-
-      describe 'to_s' do
-        it 'should return the country name' do
-          Country.new('GB').to_s.should == 'United Kingdom'
-        end
-      end
-    end
   end
 
   describe 'find_all_by' do
